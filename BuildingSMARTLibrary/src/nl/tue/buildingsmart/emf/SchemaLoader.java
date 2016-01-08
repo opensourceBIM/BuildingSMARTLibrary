@@ -1,5 +1,8 @@
 package nl.tue.buildingsmart.emf;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+
 /******************************************************************************
  * Copyright (C) 2009-2015  BIMserver.org
  * 
@@ -18,9 +21,15 @@ package nl.tue.buildingsmart.emf;
  *****************************************************************************/
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import nl.tue.buildingsmart.express.parser.ExpressSchemaParser;
+import nl.tue.buildingsmart.schema.SchemaDefinition;
 
 public class SchemaLoader {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SchemaLoader.class);
@@ -38,7 +47,40 @@ public class SchemaLoader {
 	
 	private SchemaLoader() {
 	}
+	
+	public static SchemaDefinition loadIfc2x3tc1() throws IOException {
+		return load("IFC2X3_TC1.exp");
+	}
 
+	public static SchemaDefinition loadIfc4() throws IOException {
+		return load("IFC4.exp");
+	}
+
+	private static SchemaDefinition load(String name) throws IOException {
+		InputStream inputStream = SchemaLoader.class.getResourceAsStream("schema/" + name);
+		if (inputStream != null) {
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			IOUtils.copy(inputStream, baos);
+			
+			SchemaDefinition schema = null;
+			
+			ExpressSchemaParser schemaParser = new ExpressSchemaParser(new ByteArrayInputStream(baos.toByteArray()));
+			schemaParser.parse();
+			schema = schemaParser.getSchema();
+			
+			new DerivedReader(new ByteArrayInputStream(baos.toByteArray()), schema);
+			if (schema != null) {
+				LOGGER.info("IFC-Schema successfully loaded from " + name);
+			} else {
+				LOGGER.error("Error loading IFC-Schema");
+			}
+			return schema;
+		} else {
+			LOGGER.error("Schema not found: " + name);
+		}
+		return null;
+	}
+	
 //	public static SchemaDefinition loadDefaultSchema() {
 //		return loadSchema(DEFAULT_SCHEMA_FILE);
 //	}
