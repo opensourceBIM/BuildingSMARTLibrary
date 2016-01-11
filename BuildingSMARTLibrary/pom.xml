@@ -9,18 +9,15 @@
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
 			<resource>
-				<directory>src</directory>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</resource>
-			<resource>
+				<targetPath>plugin</targetPath>
 				<directory>plugin</directory>
 			</resource>
 			<resource>
+				<targetPath>schema</targetPath>
 				<directory>schema</directory>
 			</resource>
 			<resource>
+				<targetPath>lib</targetPath>
 				<directory>lib</directory>
 			</resource>
 		</resources>
