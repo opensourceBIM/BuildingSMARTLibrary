@@ -14,7 +14,7 @@ package nl.tue.buildingsmart.express.population;
  * GNU Affero General Public License for more details.
  * 
  * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see {@literal<http://www.gnu.org/licenses/>}.
  *****************************************************************************/
 
 import java.util.ArrayList;
@@ -27,7 +27,6 @@ import nl.tue.buildingsmart.schema.EntityDefinition;
  *         <p>
  *         The EntityInstance gives access to an EXPRESS entity instance
  *         generated i.e. by reading in a SPFF / p21 file.
- *         </p>
  *         </p>
  *         <p>
  *         Depending on the type of the EntityInstance that can be retrieved
