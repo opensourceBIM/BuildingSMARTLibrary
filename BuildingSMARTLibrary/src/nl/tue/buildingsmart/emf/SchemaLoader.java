@@ -57,7 +57,7 @@ public class SchemaLoader {
 	}
 
 	private static SchemaDefinition load(String name) throws IOException {
-		InputStream inputStream = SchemaLoader.class.getResourceAsStream("schema/" + name);
+		InputStream inputStream = SchemaLoader.class.getResourceAsStream("/schema/" + name);
 		if (inputStream != null) {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 			IOUtils.copy(inputStream, baos);
