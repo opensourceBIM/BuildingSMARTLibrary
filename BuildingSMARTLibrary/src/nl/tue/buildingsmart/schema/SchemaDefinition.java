@@ -25,7 +25,7 @@ import java.util.Iterator;
  * Holds the definitions of <code>TYPEs</code>(see {@link BaseType} and its
  * implementations), <code>ENTITY</code>s (see {@link EntityDefinition}) and
  * their <code>ATTRIBUTE</code>s (see {@link Attribute} as defined in a ISO
- * 10303 <code>EXPRESS</code> schema. <br/>
+ * 10303 <code>EXPRESS</code> schema. <br></br>
  * 
  * @author Jakob Beetz
  * 
