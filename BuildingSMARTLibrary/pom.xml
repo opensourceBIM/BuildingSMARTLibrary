@@ -134,6 +134,7 @@
 		<url>https://github.com/opensourceBIM/BuildingSMARTLibrary.git</url>
 		<connection>scm:git:https://github.com/opensourceBIM/BuildingSMARTLibrary.git</connection>
 		<developerConnection>scm:git:https://github.com/opensourceBIM/BuildingSMARTLibrary.git</developerConnection>
+		<tag>HEAD</tag>
 	</scm>
 	<organization>
 		<name>OpenSource BIM</name>
