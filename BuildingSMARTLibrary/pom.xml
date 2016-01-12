@@ -29,8 +29,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.3</version>
 				<configuration>
-					<source />
-					<target />
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -140,4 +140,13 @@
 	<scm>
 		<url>https://github.com/opensourceBIM/BuildingSMARTLibrary.git</url>
 	</scm>
+	<organization>
+		<name>OpenSource BIM</name>
+		<url>opensourcebim.org</url>
+	</organization>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/opensourceBIM/BuildingSMARTLibrary/issues</url>
+	</issueManagement>
+	<name>BuildingSMARTLibrary</name>
 </project>
