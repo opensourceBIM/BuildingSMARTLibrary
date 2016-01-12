@@ -63,7 +63,7 @@
 				<version>2.5.3</version>
 				<configuration>
 					<checkModificationExcludes>
-						<checkModificationExclude>pom.xml</checkModificationExclude>
+						<checkModificationExclude>BuildingSMARTLibrary/pom.xml</checkModificationExclude>
 					</checkModificationExcludes>
 					<releaseProfiles>release</releaseProfiles>
 				</configuration>
