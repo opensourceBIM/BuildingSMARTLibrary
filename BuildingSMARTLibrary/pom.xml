@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.opensourcebim</groupId>
 	<artifactId>BuildingSMARTLibrary</artifactId>
@@ -66,7 +67,7 @@
 					<checkModificationExcludes>
 						<checkModificationExclude>BuildingSMARTLibrary/pom.xml</checkModificationExclude>
 					</checkModificationExcludes>
-					<releaseProfiles>githubrelease</releaseProfiles>
+					<preparationGoals>release</preparationGoals>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -83,37 +84,28 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>de.jutzig</groupId>
+				<artifactId>github-release-plugin</artifactId>
+				<version>1.1.0</version>
+				<executions>
+					<execution>
+						<id>github.com</id>
+						<inherited>false</inherited>
+						<phase>deploy</phase>
+						<goals>
+							<goal>release</goal>
+						</goals>
+						<configuration>
+							<releaseName>${project.version}</releaseName>
+							<tag>${project.version}</tag>
+							<artifact>${project.build.directory}/${project.artifactId}-${project.version}.war</artifact>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
-	<profiles>
-		<profile>
-			<id>githubrelease</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>de.jutzig</groupId>
-						<artifactId>github-release-plugin</artifactId>
-						<version>1.1.0</version>
-						<executions>
-							<execution>
-								<id>github.com</id>
-								<inherited>false</inherited>
-								<phase>release</phase>
-								<goals>
-									<goal>prepare</goal>
-								</goals>
-								<configuration>
-									<releaseName>${project.version}</releaseName>
-									<tag>${project.version}</tag>
-									<artifact>${project.build.directory}/${project.artifactId}-${project.version}.war</artifact>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
