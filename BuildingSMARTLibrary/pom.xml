@@ -67,7 +67,7 @@
 					<checkModificationExcludes>
 						<checkModificationExclude>BuildingSMARTLibrary/pom.xml</checkModificationExclude>
 					</checkModificationExcludes>
-					<preparationGoals>de.jutzig:github-release-plugin:1.1.0:release</preparationGoals>
+					<completionGoals>de.jutzig:github-release-plugin:1.1.0:release</completionGoals>
 				</configuration>
 			</plugin>
 			<plugin>
