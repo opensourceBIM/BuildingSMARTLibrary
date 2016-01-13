@@ -67,7 +67,7 @@
 					<checkModificationExcludes>
 						<checkModificationExclude>BuildingSMARTLibrary/pom.xml</checkModificationExclude>
 					</checkModificationExcludes>
-					<preparationGoals>release</preparationGoals>
+					<preparationGoals>github-release-plugin:release</preparationGoals>
 				</configuration>
 			</plugin>
 			<plugin>
