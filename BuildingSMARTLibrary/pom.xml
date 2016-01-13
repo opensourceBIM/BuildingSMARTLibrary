@@ -63,7 +63,7 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.5.3</version>
 				<configuration>
-					<project.scm.id>github</project.scm.id>
+					<project.scm.id>github.com</project.scm.id>
 					<checkModificationExcludes>
 						<checkModificationExclude>BuildingSMARTLibrary/pom.xml</checkModificationExclude>
 					</checkModificationExcludes>
