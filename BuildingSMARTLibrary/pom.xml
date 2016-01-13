@@ -91,6 +91,10 @@
 					<execution>
 						<id>github.com</id>
 						<inherited>false</inherited>
+						<phase>release</phase>
+						<goals>
+							<goal>prepare</goal>
+						</goals>
 						<configuration>
 							<releaseName>${project.version}</releaseName>
 							<tag>${project.version}</tag>
