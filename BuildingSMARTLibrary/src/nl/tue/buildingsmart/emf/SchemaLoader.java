@@ -72,8 +72,6 @@ public class SchemaLoader {
 			new DerivedReader(new ByteArrayInputStream(baos.toByteArray()), schema);
 			if (schema != null) {
 				LOGGER.info("IFC-Schema successfully loaded from " + name);
-			} else {
-				LOGGER.error("Error loading IFC-Schema");
 			}
 			return schema;
 		} else {
