@@ -67,6 +67,7 @@ public class SchemaLoader {
 			ExpressSchemaParser schemaParser = new ExpressSchemaParser(new ByteArrayInputStream(baos.toByteArray()));
 			schemaParser.parse();
 			schema = schemaParser.getSchema();
+			schema.setSchemaData(baos.toByteArray());
 			
 			new DerivedReader(new ByteArrayInputStream(baos.toByteArray()), schema);
 			if (schema != null) {

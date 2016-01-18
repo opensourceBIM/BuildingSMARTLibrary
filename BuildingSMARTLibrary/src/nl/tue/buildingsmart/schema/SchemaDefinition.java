@@ -75,6 +75,8 @@ public class SchemaDefinition implements Schema {
 	 */
 	private HashMap<EntityDefinition, ArrayList<EntityDefinition>> entityRelations = new HashMap<EntityDefinition, ArrayList<EntityDefinition>>();
 
+	private byte[] schemaData;
+
 	/**
 	 * @param ent
 	 *            the {@link EntityDefinition} to be added to the schema
@@ -253,6 +255,14 @@ public class SchemaDefinition implements Schema {
 			return new ArrayList<EntityDefinition>();
 		else
 			return entityRelations.get(ent);
+	}
+	
+	public byte[] getSchemaData() {
+		return schemaData;
+	}
+
+	public void setSchemaData(byte[] schemaData) {
+		this.schemaData = schemaData;
 	}
 
 	// TODO add rules and external schemas
