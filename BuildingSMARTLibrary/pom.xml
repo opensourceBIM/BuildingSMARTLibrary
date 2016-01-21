@@ -12,6 +12,9 @@
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
 			<resource>
+				<directory>ifcnamespaces</directory>
+			</resource>
+			<resource>
 				<targetPath>plugin</targetPath>
 				<directory>plugin</directory>
 			</resource>
@@ -153,13 +156,6 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
-		</dependency>
-		<dependency>
-			<groupId>ifcNamespaces</groupId>
-			<artifactId>ifcNamespaces</artifactId>
-			<version>1.0.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/lib/ifcNamespaces.jar</systemPath>
 		</dependency>
 	</dependencies>
 	<scm>

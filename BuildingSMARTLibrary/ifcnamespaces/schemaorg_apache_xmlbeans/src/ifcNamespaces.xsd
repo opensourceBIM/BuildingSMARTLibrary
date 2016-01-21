@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.iai.org/ifcNamespaces" xmlns:ifc="http://www.iai.org/ifcNamespaces" >
+
+    
+    
+    <complexType name="entities">
+    	<sequence maxOccurs="unbounded" minOccurs="0">
+    		<element name="entity" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="enumerations">
+    	<sequence maxOccurs="unbounded" minOccurs="0">
+    		<element name="enumeration" type="string"></element>
+    	</sequence>
+    </complexType>
+
+   <complexType name="selects">
+    	<sequence maxOccurs="unbounded" minOccurs="0">
+    		<element name="select" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="functions">
+    	<sequence maxOccurs="unbounded" minOccurs="0">
+    		<element name="function" type="string"></element>
+    	</sequence>
+    </complexType>
+
+	<complexType name="rules">
+    	<sequence maxOccurs="unbounded" minOccurs="0">
+    		<element name="rule" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+	<complexType name="definedtypes">
+    	<sequence maxOccurs="unbounded" minOccurs="0">
+    		<element name="definedtype" type="string"></element>
+    	</sequence>
+    </complexType>
+
+ 	
+    <complexType name="namespace">
+  
+    	<sequence>
+    		<element name="definedtypes" type="ifc:definedtypes"/>
+    		<element name="entites" type="ifc:entities"></element>
+    		<element name="enumerations" type="ifc:enumerations"></element>
+    		<element name="selects" type="ifc:selects"></element>
+    		<element name="functions" type="ifc:functions"></element>
+    		<element name="rules" type="ifc:rules"></element>
+    		
+    	</sequence>
+    	<attribute name="name" type="string" use="required" />
+    </complexType>
+    
+  	<element name="namespaces">
+  		<complexType>
+  			<sequence minOccurs="0" maxOccurs="unbounded">
+  				<element name="namespace" type="ifc:namespace"/>
+  			</sequence>
+  			<attribute name="schemaname" type="string" use="required"/>
+  		
+  		</complexType>
+  		
+  		
+  	</element>
+
+    
+
+
+    <complexType name="types"></complexType>
+</schema>
