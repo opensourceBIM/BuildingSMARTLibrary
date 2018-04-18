@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.opensourcebim</groupId>
 	<artifactId>buildingsmartlibrary</artifactId>
-	<version>1.0.13</version>
+	<version>1.0.14-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -162,7 +162,7 @@
 		<url>https://github.com/opensourceBIM/BuildingSMARTLibrary.git</url>
 		<connection>scm:git:https://github.com/opensourceBIM/BuildingSMARTLibrary.git</connection>
 		<developerConnection>scm:git:https://github.com/opensourceBIM/BuildingSMARTLibrary.git</developerConnection>
-		<tag>buildingsmartlibrary-1.0.13</tag>
+		<tag>BuildingSMARTLibrary-1.0.5</tag>
 	</scm>
 	<organization>
 		<name>OpenSource BIM</name>
