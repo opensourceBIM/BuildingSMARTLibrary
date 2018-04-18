@@ -53,7 +53,7 @@ public class SchemaLoader {
 	}
 
 	public static SchemaDefinition loadIfc4() throws IOException {
-		return load("IFC4.exp");
+		return load("IFC4_ADD2.exp");
 	}
 
 	private static SchemaDefinition load(String name) throws IOException {

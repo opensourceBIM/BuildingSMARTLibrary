@@ -1806,7 +1806,6 @@ public class Express2DictWalker extends antlr.TreeParser {
 					aggregate = aggregation_types(_t);
 					_t = _retTree;
 					astFactory.addASTChild(currentAST, returnAST);
-					System.out.println("aggregat");
 					break;
 				}
 				case SIMPLE_TYPES: {
