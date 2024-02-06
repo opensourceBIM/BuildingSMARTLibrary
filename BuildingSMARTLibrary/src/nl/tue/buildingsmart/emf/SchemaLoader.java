@@ -56,6 +56,10 @@ public class SchemaLoader {
 		return load("IFC4_ADD2.exp");
 	}
 
+	public static SchemaDefinition loadIfc4x3() throws IOException {
+		return load("IFC4x3_ADD2.exp");
+	}
+
 	private static SchemaDefinition load(String name) throws IOException {
 		InputStream inputStream = SchemaLoader.class.getResourceAsStream("/schema/" + name);
 		if (inputStream != null) {
