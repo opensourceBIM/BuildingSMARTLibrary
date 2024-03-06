@@ -7,7 +7,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	<description>Java implementation for the BuildingSMART standards IFC2x3TC1 and IFC4</description>
+	<description>Java implementation for the BuildingSMART standards IFC2x3 TC1, IFC4 ADD2 TC1, IFC 4.3 ADD2 (ISO 16739)</description>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
