@@ -49,7 +49,7 @@ public class PopulationTest {
 			 * Auto-generated catch block LOGGER.error("", e); }
 			 */
 			model = new ModelPopulation(input);
-			model.setSchemaFile(Paths.get("data" + File.separator + "IFC2X3_TC1.exp"));
+			model.setSchemaFile(Paths.get("src", "schema", "IFC2X3_TC1.exp"));
 			model.load();
 
 			System.out.println(model.getInstancesOfType("IfcWall").size());
