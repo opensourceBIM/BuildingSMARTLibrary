@@ -17,6 +17,10 @@ package nl.tue.buildingsmart.express.population.test;
  * along with this program.  If not, see {@literal<http://www.gnu.org/licenses/>}.
  *****************************************************************************/
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.TreeSet;
 
@@ -42,13 +46,37 @@ public class PopulationMetrics {
 		}
 		for (EntityInstance entInst : pop.getInstances().values()) {
 			String ns = nsConf.getNS(entInst.getEntityDefinition().getName());
-
-			namespaceMembers.put(ns, namespaceMembers.get(ns) + 1);
+			if(ns==null){
+				System.out.println("Namespace for " + entInst.getEntityDefinition().getName() + " not found!");
+			} else {
+				namespaceMembers.put(ns, namespaceMembers.get(ns) + 1);
+			}
 		}
 		TreeSet<String> ts = new TreeSet(namespaceMembers.keySet());
 		for (String ns : ts) {
 
 			System.out.println(ns + ";" + namespaceMembers.get(ns));
+		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		if(args.length > 1 ){
+			try(FileInputStream spf =  new FileInputStream(args[0])){
+				Namespaces namespaces = new Namespaces(args[1]);
+				if(namespaces.readNSConfig()){
+					System.out.println("read ns config");
+				} else {
+					System.out.println("failed to read ns config");
+				}
+				for (String namespace: namespaces.getNamespaces()) {
+					System.out.println(namespace);
+					// System.out.println(String.join(", ", namespaces.getNamespaceMembers(namespace)));
+				}
+				ModelPopulation model = new ModelPopulation(spf);
+				model.setSchemaFile(Paths.get("src", "schema", "IFC2X3_TC1.exp"));
+				model.load();
+				new PopulationMetrics(model, namespaces).countEntitiesPerNamespace();
+			}
 		}
 	}
 }

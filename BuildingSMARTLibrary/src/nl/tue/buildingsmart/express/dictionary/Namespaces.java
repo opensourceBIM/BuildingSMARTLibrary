@@ -132,6 +132,10 @@ public class Namespaces {
 
 	}
 
+	public List<String> getNamespaceMembers(String namespace){
+		return namespaces.get(namespace);
+	}
+
 	public Set<String> getNamespaces() {
 		return namespaces.keySet();
 	}
