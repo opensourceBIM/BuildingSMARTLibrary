@@ -14,22 +14,6 @@
 			<resource>
 				<directory>ifcnamespaces</directory>
 			</resource>
-			<resource>
-				<targetPath>plugin</targetPath>
-				<directory>plugin</directory>
-			</resource>
-			<resource>
-				<targetPath>schema</targetPath>
-				<directory>schema</directory>
-			</resource>
-			<resource>
-				<targetPath>lib</targetPath>
-				<directory>lib</directory>
-			</resource>
-			<resource>
-				<targetPath>schema</targetPath>
-				<directory>src/schema</directory>
-			</resource>
 		</resources>
 		<plugins>
 			<plugin>
